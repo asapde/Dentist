@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Booking Dentist</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script language="javascript">
+        function verify() {
+          var dateStr = document.book.date.value;
+          var timeStr = document.book.time.value;
+      
+          if (dateStr == '') {
+            alert("Veuillez saisir une date");
+            return false;
+          }
+      
+          if (timeStr == '') {
+            alert("Veuillez saisir une heure");
+            return false;
+          }
+      
+          var inputDate = new Date(dateStr + 'T' + timeStr);
+          var now = new Date();
+      
+          if (inputDate < now) {
+            alert("Veuillez saisir une date et heure valide");
+            return false;
+          }
+      
+          var name = document.book.Fullname.value;
+          if (name.length <= 0 || name.length < 3) {
+            alert("Veuillez saisir un nom valide");
+            return false;
+          }
+      
+          var tel = document.book.tel.value;
+          if (tel.length != 8 || (tel.charAt(0) != '5' && tel.charAt(0) != '9' && tel.charAt(0) != '2')) {
+            alert("Veuillez vérifier votre numéro de téléphone");
+            return false;
+          }
+      
+          return true;
+        }
+      </script>
+      <style>
+        .sidebar{
+          background-color: rgb(83, 196, 238);
+          left:0;
+          position:fixed;
+          top:0;
+          width:200px;
+          height: 100%;
+          transition: 0.5s;
+          transition-property: left;
+        }
+        .sidebar a{
+          color:white;
+          display: block;   /*undereach other*/
+          line-height: 35px;    /* l'espace between each other */
+          text-decoration: none; /*to delete the _*/
+          padding-left: 35px ;
+          padding-top: 15px;
+          padding-bottom: 15px;
+          font-size: 17px;
+        }
+        .sidebar a:hover{
+          background-color: white;
+          color:black;
+        }
+        .sidebar i{
+          padding-right: 10px;
+        }
+        label #flesh{
+          color: rgb(177, 255, 255);
+          position:fixed;
+          font-size: 35px;
+          cursor: pointer; /*faire le sourie comme la main*/
+          /*transition: 5s;
+          transition-property: color;*/
+          z-index:1; /* to not delete the label when deleting the content*/
+          position:fixed;
+          left:90%;
+        }
+        label #flesh:hover{
+          color:white;
+        }
+        #cc:checked ~ .sidebar{
+          left: -200px;
+        }
+      #cc{
+        display : none;
+      }
+        
+      </style>
+</head>
+<body background="360_F_280912237_LwphjbCj0T79j8Qnirxeqzf6tjxKQz3b.jpg">
+  <input type="checkbox" id="cc" checked>
+  <label for="cc">
+    <i class="fas fa-bars" id="flesh"></i>
+  </label>
+  <div class="sidebar">
+    <br>
+    <a href="mainpage.html"><i class="fa-solid fa-house"></i><span>Home</span></a>
+    <a href="aboutus.html"><i class="fa-solid fa-address-card"></i><span >About Us</span></a>
+    <a href="services.html"><i class="fa-sharp fa-solid fa-tooth"></i><span >Services </span></a>
+    <a href="contactus.html"><i class="fa-solid fa-address-book"></i><span >Contact Us</span></a>
+    <a href="faqs.html"><i class="fa-solid fa-question"></i><span >FAQs</span></a>
+  </div>
+  <h1>welcome to tayeb dental clinic</h1>
+    <form name="book" method="POST" action="makeappointement.php" onsubmit="return verify()">
+        <label for="drselec">you can book an appointement down bellow : </label>
+        <br><br>
+       <select id="drselec" name="doc">
+        <option value="nonselected">Select your doctor</option>
+        <option value="Dr. Hallab">Dr. Hallab</option>
+        <option value="Dr. Tayeb">Dr. Tayeb</option>
+       </select>
+       <br>
+       <input type="date"  name="date">
+       <br>
+       <input type="time"  name="time">
+       <br>
+       <input type="text" placeholder="Full Name" name="Fullname">
+       <br>
+       <input type="text" placeholder="Phone Number" name="tel">
+       <br>
+       <input type="submit" value="Make an appointement">
+    </form>
+</body>
+</html>
