@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <title>aboutus</title>
+  
+    <style>
+        body{
+         background-color: #37bcff;
+        }
+        h1{
+            margin-top: 100px;
+            color: white;
+        }
+        p{
+            color:white;
+            font-size: 20px;
+            padding: 14px;
+        }
+        .sidebar{
+          background-color: rgb(83, 196, 238);
+          left:0;
+          position:fixed;
+          top:0;
+          width:200px;
+          height: 100%;
+          transition: 0.5s;
+          transition-property: left;
+        }
+        .sidebar a{
+          color:white;
+          display: block;   /*undereach other*/
+          line-height: 35px;    /* l'espace between each other */
+          text-decoration: none; /*to delete the _*/
+          padding-left: 35px ;
+          padding-top: 15px;
+          padding-bottom: 15px;
+          font-size: 17px;
+        }
+        .sidebar a:hover{
+          background-color: white;
+          color:black;
+        }
+        .sidebar i{
+          padding-right: 10px;
+        }
+        label #flesh{
+          color: rgb(177, 255, 255);
+          position:fixed;
+          font-size: 35px;
+          cursor: pointer; /*faire le sourie comme la main*/
+          /*transition: 5s;
+          transition-property: color;*/
+          z-index:1; /* to not delete the label when deleting the content*/
+          position:fixed;
+          left:90%;
+        }
+        label #flesh:hover{
+          color:white;
+        }
+        #cc:checked ~ .sidebar{
+          left: -200px;
+        }
+     
+      #cc{
+        display : none;
+      }     
+    </style>
+</head>
+<body >
+    <input type="checkbox" id="cc" checked>
+    <label for="cc">
+      <i class="fas fa-bars" id="flesh"></i>
+    </label>
+<div class="sidebar">
+  <br>
+  <a href="mainpage.html"><i class="fa-solid fa-house"></i><span>Home</span></a>
+  <a href="aboutus.html"><i class="fa-solid fa-address-card"></i><span >About Us</span></a>
+  <a href="services.html"><i class="fa-sharp fa-solid fa-tooth"></i><span >Services </span></a>
+  <a href="contactus.html"><i class="fa-solid fa-address-book"></i><span >Contact Us</span></a>
+  <a href="faqs.html"><i class="fa-solid fa-question"></i><span >FAQs</span></a>
+</div>
+   <section class="">
+      <h1>Welcome to Tayeb Dental Care!</h1>
+      <p>Our mission is to provide exceptional dental care to our patients in a comfortable and friendly environment. We believe in building long-lasting relationships with our patients and making sure they feel confident and informed about their dental health.</p>
+      <p>Our lead dentist, Dr. Mohamed tayeb, has been practicing dentistry for over 20 years. He received his degree from the University of science in tunisia (FST) and completed additional training in cosmetic dentistry. Dr. Tayeb is passionate about staying up-to-date with the latest advancements in dental technology and techniques.</p>
+      <p>Our team includes experienced dental hygienists, dental assistants, and office staff who are dedicated to making your visit as smooth and comfortable as possible.</p>
+      <p>At Tayeb Dental Care, we offer a range of services to meet your dental needs, including routine cleanings, fillings, crowns and bridges, teeth whitening, and more. We use state-of-the-art technology, such as digital x-rays and intraoral cameras, to provide accurate diagnoses and effective treatments.</p>
+      <p>We know that visiting the dentist can be stressful for some patients, which is why we strive to create a welcoming and relaxing atmosphere. Our office features comfortable seating, TVs in the exam rooms, and a variety of amenities to help you feel at ease.</p>
+      <p>Thank you for considering Tayeb Dental Care for your dental needs. We look forward to meeting you and providing you with exceptional care.</p>
+   </section>
+
+  
+</body>
+</html>
